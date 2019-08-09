@@ -15,8 +15,9 @@ const getters={
 }
 
 const actions={
-	addDept(){
-		console.log('actions:addDept');
+	addDept({commit},params){
+		// console.log('actions:addDept');
+		commit('addDept',params);
 	},
 	delDept(){
 
@@ -25,8 +26,9 @@ const actions={
 
 
 const mutations={
-	addDept(){
-		console.log('mutations:addUser');
+	addDept(state,params){
+		// console.log('mutations:addUser');
+		state.depts.push(params);
 	},
 	delDept(){
 

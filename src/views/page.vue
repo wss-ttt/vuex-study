@@ -1,6 +1,8 @@
 <template>
   <div>
   	<button @click="add">添加数据</button>
+    <button @click="insertUser">添加员工</button> 
+    <button @click="insertDept">添加部门</button> 
   </div>
 </template>
 <script>
@@ -9,7 +11,7 @@ export default {
   name: 'page',
   data() {
     return {
-
+      id:2,
     }
   },
   computed:{
@@ -34,7 +36,23 @@ export default {
   		this.$store.dispatch('addDept');
   		this.$store.commit('addUser');
   		this.$store.commit('addDept');
-  	}
+  	},
+    // 添加员工
+    insertUser(){
+      console.log('insertUser');
+      this.addUser({
+        id:2,
+        name:'小龙女',
+        age:28
+      });
+    },
+    insertDept(){
+      console.log('insertDept');
+      this.addDept({
+        id:this.id++,
+        name:'市场部'
+      });
+    }
   }
 }
 

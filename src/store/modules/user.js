@@ -16,8 +16,9 @@ const getters={
 }
 
 const actions={
-	addUser(){
-		console.log('actions:addUser');
+	addUser({commit},params){
+		// console.log('actions:addUser');
+		commit('addUser',params);
 	},
 	delUser(){
 
@@ -26,8 +27,9 @@ const actions={
 
 
 const mutations={
-	addUser(){
-		console.log('mutations:addUser');
+	addUser(state,params){
+		// console.log('mutations:addUser');
+		state.users.push(params);
 	},
 	delUser(){
 
@@ -35,6 +37,7 @@ const mutations={
 };
 
 export default{
+	namespaced:true,
 	state,
 	getters,
 	actions,
