@@ -1,7 +1,11 @@
 <template>
 	<div class="test">
 		<h2>我是page4页面</h2>
-		{{num}}
+		{{myNum}}
+		<br />
+		{{myInfo}}
+		<br />
+		{{users}}
 	</div>
 </template>
 
@@ -15,7 +19,14 @@
 			}
 		},
 		computed:{
-			...mapGetters(['num'])
+			// ...mapGetters(['num'])
+			...mapGetters(
+				{
+					'myNum':'num',
+					'myInfo':'info',
+					'users':'user/getUsers'
+				}
+			)
 		}
 	}
 </script>
