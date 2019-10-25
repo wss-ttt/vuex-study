@@ -16,6 +16,9 @@ export default {
   		return 100;
   	}
   },
+  actions:{
+	  
+  },
   mutations: {
   	updateAge(state,{age}){
   		console.log(age)
